@@ -9,4 +9,4 @@ class RoomSerializer(serializers.ModelSerializer):
 class CreateRoomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Room
-        fields = ('guest_can_pause', 'votes_to_skip', 'host') # 'code' is not included because it is auto-generated
+        fields = ('guest_can_pause', 'votes_to_skip')
