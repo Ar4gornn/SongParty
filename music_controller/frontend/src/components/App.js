@@ -4,18 +4,18 @@ import HomePage from "./HomePage";
 
 
 export default class App extends Component {
-  constructor(props) {
-    super(props);
+    constructor(props) {
+      super(props);
+    }
+  
+    render() {
+      return (
+        <div className="center">
+          <HomePage />
+        </div>
+      );
+    }
   }
-
-  render() {
-    return (
-      <div>
-        <HomePage />
-      </div>
-    );
-  }
-}
-
-const appDiv = document.getElementById("app");
-render(<App />, appDiv);
+  
+  const appDiv = document.getElementById("app");
+  render(<App />, appDiv);

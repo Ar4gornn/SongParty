@@ -1,13 +1,6 @@
 import React, { Component } from "react";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
+import { Button, TextField, Grid, Typography, FormHelperText, 
+    Radio, RadioGroup, FormControlLabel, FormControl } from "@material-ui/core/";
 import { Link } from "react-router-dom";
 
 // This class-based component represents the page for creating a new room.
@@ -57,7 +50,9 @@ export default class CreateRoomPage extends Component {
                 guest_can_pause: this.state.guestCanPause,
             }),
         };
-        fetch('/api/create-room', requestOptions).then((response) => response.json().then((data) => console.log(data))); // Fetch request to create a room with the specified options.
+        fetch('/api/create-room', requestOptions)
+        .then((response) => response.json()
+        .then((data) => this.props.history.push("/room/" + data.code))); // Fetch request to create a room with the specified options.
     }
 
     // Render method to display the UI components.
